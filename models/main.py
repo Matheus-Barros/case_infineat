@@ -35,52 +35,5 @@ data_concatenated.to_excel(r'..\data_results\trusted\case_data.xlsx',sheet_name=
 # Realizando teste de qualidade
 run_tests(r'..\ge',data_concatenated)
 
-# # data_concatenated = read_table_sqlite(conn,'trusted_case_data')
-
-# # Remover entradas com valores inválidos (0 em valor total ou pesagem total)
-# data_concatenated = data_concatenated[(data_concatenated['valor_total_geral_(r$)'] > 0) & (data_concatenated['pesagem_real_total_(kg)'] > 0)]
-
-# # Cálculo da eficiência por fornecedor (custo por kg descartado)
-# data_concatenated['custo_por_kg'] = data_concatenated['valor_total_geral_(r$)'] / data_concatenated['pesagem_real_total_(kg)']
-
-
-# # ========================= Agrupar por fornecedor para calcular a média de custo por kg, peso total e eficiência =========================
-# fornecedor_efficiency = data_concatenated.groupby('fornecedor').agg(
-#     peso_total=('pesagem_real_total_(kg)', 'sum'),
-#     valor_total=('valor_total_geral_(r$)', 'sum'),
-#     custo_medio_por_kg=('custo_por_kg', 'mean'),
-#     num_transacoes=('fornecedor', 'count')
-# ).reset_index()
-
-# # Calcular a métrica de eficiência geral (custo médio ponderado pelo peso total)
-# fornecedor_efficiency['eficiencia_geral'] = fornecedor_efficiency['valor_total'] / fornecedor_efficiency['peso_total']
-
-# # Ordenar pela eficiência (menor custo médio por kg e menor eficiência geral)
-# fornecedor_efficiency = fornecedor_efficiency.sort_values(by=['eficiencia_geral', 'custo_medio_por_kg'])
-
-# # Adicionar um ranking de eficiência
-# fornecedor_efficiency['ranking'] = fornecedor_efficiency['custo_medio_por_kg'].rank(method='min')
-
-# # Ordenar o DataFrame pelo ranking
-# fornecedor_efficiency = fornecedor_efficiency.sort_values(by='ranking')
-
-# # Salvando no banco de dados
-# fornecedor_efficiency.to_sql('conformed_eficiencia_fornecedor', conn, if_exists='replace', index=False)
-# fornecedor_efficiency.to_excel(r'..\data_results\conformed\eficiencia_fornecedor.xlsx',sheet_name='eficiencia_fornecedor',index=False)
-
-# # ========================= Ranking de lojas por custo por kg =========================
-# loja_ranking = data_concatenated.groupby('uf_-_loja').agg(
-#     peso_total=('pesagem_real_total_(kg)', 'sum'),
-#     valor_total=('valor_total_geral_(r$)', 'sum'),
-#     custo_medio_por_kg=('custo_por_kg', 'mean')
-# ).reset_index()
-
-# # Ordenar por maior custo médio por kg
-# loja_ranking = loja_ranking.sort_values(by='custo_medio_por_kg', ascending=False)
-
-# # Salvando no banco de dados
-# loja_ranking.to_sql('conformed_ranking_loja', conn, if_exists='replace', index=False)
-# loja_ranking.to_excel(r'..\data_results\conformed\ranking_loja.xlsx',sheet_name='ranking_loja',index=False)
-
 # Fechando conexão com banco
 conn = close_database(conn)

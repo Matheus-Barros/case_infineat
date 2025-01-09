@@ -1,0 +1,78 @@
+{
+  "expectations": [
+    {
+      "id": "34d0db34-351c-4d96-9397-c0297ac2a3b6",
+      "kwargs": {
+        "column": "valor_total_geral_(r$)",
+        "max_value": 1000000.0,
+        "min_value": 1.0
+      },
+      "meta": {},
+      "type": "expect_column_min_to_be_between"
+    },
+    {
+      "id": "8cc08497-b201-4baf-a945-531a81c752ea",
+      "kwargs": {
+        "column": "pesagem_real_total_(kg)",
+        "max_value": 1000000.0,
+        "min_value": 1.0
+      },
+      "meta": {},
+      "type": "expect_column_min_to_be_between"
+    },
+    {
+      "id": "0d0f9c59-2d43-4b15-b57e-f57245fa9adf",
+      "kwargs": {
+        "column": "uf_-_loja"
+      },
+      "meta": {},
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "66359f58-3836-4957-a330-edcdc5157d4f",
+      "kwargs": {
+        "column": "fornecedor"
+      },
+      "meta": {},
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "f8a2ecde-73db-49e0-ac16-b74afbf4e6fd",
+      "kwargs": {
+        "column": "pesagem_real_total_(kg)"
+      },
+      "meta": {},
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "30f2d749-e6ee-4431-86e4-5ee12e0809f2",
+      "kwargs": {
+        "column": "valor_total_geral_(r$)"
+      },
+      "meta": {},
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "2ba131ac-5978-41ed-bd4c-4219c2caca30",
+      "kwargs": {
+        "column": "valor_total_geral_(r$)"
+      },
+      "meta": {},
+      "type": "expect_column_to_exist"
+    },
+    {
+      "id": "96fa8f0e-9fa8-4558-bdd9-42a587678bff",
+      "kwargs": {
+        "column": "pesagem_real_total_(kg)"
+      },
+      "meta": {},
+      "type": "expect_column_to_exist"
+    }
+  ],
+  "id": "42ec13c6-8ecc-47ee-9f5d-f58d575835a7",
+  "meta": {
+    "great_expectations_version": "1.3.0"
+  },
+  "name": "suite",
+  "notes": null
+}

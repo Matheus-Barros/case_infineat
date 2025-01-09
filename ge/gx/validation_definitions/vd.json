@@ -1,0 +1,22 @@
+{
+  "data": {
+    "asset": {
+      "id": "1c380357-cdb9-448e-bdec-7fe7229d5ef8",
+      "name": "data_asset"
+    },
+    "batch_definition": {
+      "id": "5028c6cf-7a16-472b-a32e-cd45c29699de",
+      "name": "data_batch"
+    },
+    "datasource": {
+      "id": "f51e521a-9a3d-49f1-a1d0-8305acd85e70",
+      "name": "data_source"
+    }
+  },
+  "id": "d7cf7690-fd76-473f-bc6d-ac846c5f40fd",
+  "name": "vd",
+  "suite": {
+    "id": "42ec13c6-8ecc-47ee-9f5d-f58d575835a7",
+    "name": "suite"
+  }
+}
